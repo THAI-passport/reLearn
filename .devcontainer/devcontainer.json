@@ -1,0 +1,6 @@
+{
+  "name": "RE course (Linux x86_64)",
+  "build": { "dockerfile": "Dockerfile" },
+  "runArgs": ["--platform=linux/amd64", "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+  "postCreateCommand": "python3 tools/check_env.py"
+}
