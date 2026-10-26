@@ -2,46 +2,29 @@
 """Build module 00 targets.
 
 Creates build/hello (with symbols) and challenge/mystery (stripped).
-The secret token is derived from a local, gitignored seed (.seed at repo root),
-so each learner has a different answer.
+The token is derived from the learner's local seed (tools/relab.py), so each
+learner has a different answer.
 """
-import hashlib
-import platform
-import secrets
-import subprocess
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent.parent
-SEED_FILE = ROOT / ".seed"
-MODULE_ID = "00"
+sys.path.insert(0, str(HERE.parents[1] / "tools"))
+import relab  # noqa: E402
+
+MODULE = "00"
 
 
-def get_seed() -> str:
-    if not SEED_FILE.exists():
-        SEED_FILE.write_text(secrets.token_hex(16))
-    return SEED_FILE.read_text().strip()
-
-
-def token(seed: str = None) -> str:
-    seed = seed or get_seed()
-    return "RE-" + hashlib.sha256((seed + MODULE_ID).encode()).hexdigest()[:8]
-
-
-def compile_target(out: Path, extra: list) -> None:
-    out.parent.mkdir(exist_ok=True)
-    cmd = ["clang", "-O0", f'-DTOKEN="{token()}"', str(HERE / "src" / "hello.c"), "-o", str(out)]
-    if platform.system() == "Darwin":
-        cmd[1:1] = ["-arch", "x86_64"]
-    cmd += extra
-    subprocess.run(cmd, check=True)
+def token() -> str:
+    return relab.token(MODULE)
 
 
 def main() -> int:
-    compile_target(HERE / "build" / "hello", ["-g"])
-    compile_target(HERE / "challenge" / "mystery", [])
-    subprocess.run(["strip", str(HERE / "challenge" / "mystery")], check=True)
+    src = HERE / "src" / "hello.c"
+    defines = {"TOKEN": relab.c_string(token())}
+    relab.compile_c(src, HERE / "build" / "hello", defines=defines, debug=True)
+    mystery = relab.compile_c(src, HERE / "challenge" / "mystery", defines=defines)
+    relab.strip(mystery)
     print("Built build/hello (symbols) and challenge/mystery (stripped).")
     return 0
 

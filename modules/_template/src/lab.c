@@ -1,0 +1,1 @@
+/* Lab source. TOKEN is injected by build.py. */

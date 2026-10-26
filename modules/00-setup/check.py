@@ -9,19 +9,18 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from build import token  # noqa: E402
+import build  # noqa: E402
+from build import relab  # noqa: E402
 
 
 def main() -> int:
-    answer_file = HERE / "my-answer.txt"
-    if not answer_file.exists():
-        print("FAIL: create modules/00-setup/my-answer.txt containing the token you found.")
+    answer = relab.read_answer(relab.answer_arg(HERE),
+                               "create modules/00-setup/my-answer.txt containing the token you found.")
+    if answer is None:
         return 1
-    if answer_file.read_text().strip() == token():
-        print("PASS: you found the token in a stripped binary using command-line triage.")
-        return 0
-    print("FAIL: that is not the token. Re-check your strings output (the token starts with RE-).")
-    return 1
+    return relab.verdict(answer == build.token(),
+                         "you found the token in a stripped binary using command-line triage.",
+                         "that is not the token. Re-check your strings output (the token starts with RE-).")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,17 @@
 a.out
 *.o
+!modules/*/src/**/*.o
 modules/*/challenge/*
 !modules/*/challenge/CHALLENGE.md
 modules/*/build/
+modules/*/my-answer.txt
+modules/*/work/
 .seed
+.venv/
 .DS_Store
 __pycache__/
+
+# Learner knowledge base: personal, never committed to the public repo.
+notes/*
+!notes/README.md
+!notes/_templates/
