@@ -1,0 +1,8 @@
+a.out
+*.o
+modules/*/challenge/*
+!modules/*/challenge/CHALLENGE.md
+modules/*/build/
+.seed
+.DS_Store
+__pycache__/
