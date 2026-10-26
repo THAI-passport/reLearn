@@ -14,8 +14,8 @@ The first milestone is the same for everyone: take a compiled C program, disasse
 
 ## Quick start
 ```bash
-git clone https://github.com/THAI-passport/RElearn.git
-cd RElearn
+git clone https://github.com/THAI-passport/reLearn.git
+cd reLearn
 make init-notes        # create your notes/ from notes/_templates/
 make check-env         # check tools and print your platform route
 ```
