@@ -21,7 +21,8 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿⭐⭕️‍]")
+_RANGES = ((0x1F000, 0x1FAFF), (0x2600, 0x27BF), (0x2B50, 0x2B50), (0x2B55, 0x2B55), (0xFE0F, 0xFE0F), (0x200D, 0x200D))
+EMOJI = re.compile("[" + "".join(f"{chr(a)}-{chr(b)}" for a, b in _RANGES) + "]")
 MODULE_FILES = ("README.md", "build.py", "check.py", "Makefile", "challenge/CHALLENGE.md",
                 "solutions/WALKTHROUGH.md", "solutions/solve.py")
 FORBIDDEN = (re.compile(r"(^|/)\.seed$"), re.compile(r"(^|/)my-answer\.txt$"),
