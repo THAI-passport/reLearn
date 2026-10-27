@@ -14,6 +14,9 @@ Contributions are welcome: new modules (built from the specs in `goals.md`), fix
 7. Write the lesson `README.md`: context, objectives, prerequisites, steps with predictions and checkpoint questions, and the module checkpoint. Paste only output you captured from a real build, labeled with the command and host. Give Linux commands next to macOS ones.
 8. Change the module's status in `goals.md` from `spec` to `built`, and mention it in `README.md`.
 
+## Pull requests and CI
+`main` is protected: open a pull request. CI runs `tools/lint.py` and `tools/check_env.py` plus `tools/selftest.py` on Ubuntu and macOS, and both selftest jobs must pass before merging. Run `make lint` and `make selftest` locally first. Update `CHANGELOG.md` for curriculum changes.
+
 ## Review checklist
 - [ ] Matches its `goals.md` spec; prerequisites and objectives are can-do statements.
 - [ ] Context section present (for context-first learners).

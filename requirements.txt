@@ -1,0 +1,2 @@
+# Optional Python packages used by later modules and the author self-test.
+z3-solver
