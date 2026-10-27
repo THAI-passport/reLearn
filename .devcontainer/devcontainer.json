@@ -2,5 +2,5 @@
   "name": "RE course (Linux x86_64)",
   "build": { "dockerfile": "Dockerfile" },
   "runArgs": ["--platform=linux/amd64", "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
-  "postCreateCommand": "python3 tools/check_env.py"
+  "postCreateCommand": "python3 -m venv .venv && .venv/bin/pip install -r requirements.txt && python3 tools/check_env.py"
 }

@@ -1,5 +1,7 @@
 # Reverse Engineering Learning Lab
 
+[![CI](https://github.com/THAI-passport/reLearn/actions/workflows/ci.yml/badge.svg)](https://github.com/THAI-passport/reLearn/actions/workflows/ci.yml)
+
 A self-paced reverse engineering (RE) course taught by an AI coding agent, for learners at any starting level: from no C at all, to security practitioners who want rigorous RE and tooling, to researchers in obfuscation, malware, firmware, mobile, or protocol analysis.
 
 The first milestone is the same for everyone: take a compiled C program, disassemble and decompile it, and explain what the original source did. The course then covers linking and loading, Ghidra and scripting, debuggers, tracing, Frida, emulation and fuzzing, patching, mitigations, symbolic execution, ARM64, C++, Rust and Go, managed runtimes, OS internals, anti-analysis, packing and obfuscation, and professional practice.
@@ -56,6 +58,7 @@ Details and assumptions: `paths/README.md`.
 | `resources.md` | Books, papers, CTFs, and tools |
 | `AGENTS.md` | The tutor's protocol |
 | `CONTRIBUTING.md` | How to add a module, review checklist |
+| `CHANGELOG.md`, `SECURITY.md` | What changed between versions; how to report a problem with the course |
 
 Built modules so far: 00, 01, 02, 03, and specialist module S1.1 (MBA with Z3). The others are fully specified in `goals.md`, and the tutor builds each one when you reach it.
 
