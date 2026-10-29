@@ -3,6 +3,8 @@
 Curriculum and tooling changes that affect learners partway through. Newest first.
 
 ## Unreleased
+- Add module 04 (First Look: Disassembler and Decompiler). The Ghidra steps have no captured decompiler output because Ghidra was not available when it was written.
+- Add `CODE_OF_CONDUCT.md`; `lint` is now a required check on `main`.
 - Add `tools/lint.py` (`make lint`) and run it in CI; add `requirements.txt`, Dependabot, `.editorconfig`, `.gitattributes`.
 - CI also runs weekly to catch toolchain drift on the runners.
 - Devcontainer installs the Python requirements (z3) in a virtual environment.
