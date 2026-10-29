@@ -41,7 +41,7 @@ Status: **built** = folder exists and is tested; **spec** = specified below, bui
 | 01 | From Source to Binary | core | 4 | 00 | built |
 | 02 | Data Representation: Numbers, Bits, and Bytes | core | 5 | 00 | built |
 | 03 | C Through the Lens of Memory | core | 6 | 01, 02 | built |
-| 04 | First Look: Disassembler and Decompiler | core | 4 | 01, 03 | spec |
+| 04 | First Look: Disassembler and Decompiler | core | 4 | 01, 03 | built |
 | 05 | CPU, Registers, and Instructions | core | 8 | 02, 04 | spec |
 | 06 | Functions, the Stack, and Calling Conventions | core | 8 | 05 | spec |
 | 07 | C Constructs and the Optimizer | core | 10 | 06 | spec |

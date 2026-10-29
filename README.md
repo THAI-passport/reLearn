@@ -58,9 +58,9 @@ Details and assumptions: `paths/README.md`.
 | `resources.md` | Books, papers, CTFs, and tools |
 | `AGENTS.md` | The tutor's protocol |
 | `CONTRIBUTING.md` | How to add a module, review checklist |
-| `CHANGELOG.md`, `SECURITY.md` | What changed between versions; how to report a problem with the course |
+| `CHANGELOG.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md` | What changed between versions; how to report a problem with the course; community rules |
 
-Built modules so far: 00, 01, 02, 03, and specialist module S1.1 (MBA with Z3). The others are fully specified in `goals.md`, and the tutor builds each one when you reach it.
+Built modules so far: 00, 01, 02, 03, 04, and specialist module S1.1 (MBA with Z3). The others are fully specified in `goals.md`, and the tutor builds each one when you reach it.
 
 ## Things to say to the tutor
 `where am I`, `next`, `quiz me`, `review`, `hint`, `explain differently`, `go deeper`, `context first`, `skip ahead`, `change path`, `wrap up`.
